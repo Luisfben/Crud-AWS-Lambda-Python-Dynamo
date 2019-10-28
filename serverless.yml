@@ -1,0 +1,35 @@
+service: cliente
+
+provider:
+  name: aws
+  runtime: python2.7
+
+functions:
+  create:
+    handler: create.handler
+    events:
+      - http:
+          path: cliente
+          method: post
+
+  read:
+    handler: read.handler
+    events:
+      - http:
+          path: cliente/{id}
+          method: get
+
+  update:
+    handler: update.handler
+    events:
+      - http:
+          path: cliente/{id}
+          method: put
+
+  delete:
+    handler: delete.handler
+    events:
+      - http:
+          path: cliente/{id}
+          method: delete
+          
