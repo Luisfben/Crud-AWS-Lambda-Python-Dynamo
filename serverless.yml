@@ -32,4 +32,3 @@ functions:
       - http:
           path: cliente/{id}
           method: delete
-          
